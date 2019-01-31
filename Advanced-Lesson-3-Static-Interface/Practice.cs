@@ -41,24 +41,69 @@ namespace Advanced_Lesson_3_Static_Interface
         /// </summary>
         public static void AL3_P3_3()
         {
+            int intI = 45;
+            string stringI = "Hello";
+            float floatI = 4.50236F;
+            DateTime dayI = DateTime.Now;
+
+            GuessType<float>(floatI);
         }
 
-    }
-
-    public class PracticeID
-    {
-        public static int id { get; private set; }
-        public string name;
-
-        public PracticeID()
+        static void GuessType<T>(T item)
         {
-            id++;
+            T temp = item;
+
+            switch (temp)
+            {
+                case int result:
+                    Console.WriteLine("Вы передали положительное целое число");
+                    break;
+
+                case string result:
+                    Console.WriteLine("Вы передали строку длинной 5 символов");
+                    break;
+
+                case float result:
+                    Console.WriteLine("Вы передали вещественное число с 5 значимыми цифрами");
+                    break;
+
+                case DateTime result:
+                    Console.WriteLine("Вы передали время");
+                    break;
+
+                default:
+                    Console.WriteLine("Понятия не имею, что вы передали");
+                    break;
+
+
+            }
+
+
         }
 
-        static PracticeID()
+
+
+
+
+
+
+
+
+        public class PracticeID
         {
-            id = 1000;
-        }
+            public static int id { get; private set; }
+            public string name;
 
+            public PracticeID()
+            {
+                id++;
+            }
+
+            static PracticeID()
+            {
+                id = 1000;
+            }
+
+        }
     }
 }
